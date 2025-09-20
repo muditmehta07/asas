@@ -1,0 +1,29 @@
+[0.059s] Invoking command in '/mnt/d/code/Major-Project/ros_ws/build/my_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /mnt/d/code/Major-Project/ros_ws/build/my_bot -- -j7 -l7
+[0.125s] Invoked command in '/mnt/d/code/Major-Project/ros_ws/build/my_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /mnt/d/code/Major-Project/ros_ws/build/my_bot -- -j7 -l7
+[0.145s] Invoking command in '/mnt/d/code/Major-Project/ros_ws/build/my_bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /mnt/d/code/Major-Project/ros_ws/build/my_bot
+[0.153s] -- Install configuration: ""
+[0.158s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/config
+[0.176s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/config/empty.yaml
+[0.185s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/description
+[0.202s] -- Installing: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/description/robot.urdf.xacro
+[0.250s] -- Installing: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/description/robot_core.xacro
+[0.291s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/launch
+[0.309s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/launch/rsp.launch.py
+[0.317s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/worlds
+[0.332s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/worlds/empty.world
+[0.350s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/ament_index/resource_index/package_run_dependencies/my_bot
+[0.367s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/ament_index/resource_index/parent_prefix_path/my_bot
+[0.378s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/environment/ament_prefix_path.sh
+[0.390s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/environment/ament_prefix_path.dsv
+[0.401s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/environment/path.sh
+[0.413s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/environment/path.dsv
+[0.424s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/local_setup.bash
+[0.435s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/local_setup.sh
+[0.446s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/local_setup.zsh
+[0.457s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/local_setup.dsv
+[0.469s] -- Installing: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/package.dsv
+[0.516s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/ament_index/resource_index/packages/my_bot
+[0.529s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/cmake/my_botConfig.cmake
+[0.538s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/cmake/my_botConfig-version.cmake
+[0.552s] -- Up-to-date: /mnt/d/code/Major-Project/ros_ws/install/my_bot/share/my_bot/package.xml
+[0.559s] Invoked command in '/mnt/d/code/Major-Project/ros_ws/build/my_bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /mnt/d/code/Major-Project/ros_ws/build/my_bot
