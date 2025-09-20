@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-6ecd7517a39efd2e8b3b.json",
+					"jsonFile" : "directory-.-a35709c4ac23b0e8bad6.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.12"
@@ -60,7 +60,7 @@
 	"paths" : 
 	{
 		"build" : "/mnt/d/code/Major-Project/ros_ws/build/my_bot",
-		"source" : "/mnt/d/code/Major-Project/ros_ws/src"
+		"source" : "/mnt/d/code/Major-Project/ros_ws/src/my_bot"
 	},
 	"version" : 
 	{
