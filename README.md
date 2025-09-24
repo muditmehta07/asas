@@ -6,4 +6,5 @@
 2. This map would then be converted into a human interpretable map with sharp visuals using CNN.
 
 `aiml_ws` is relevant to those working on AIML stuff.
+
 `ros_ws`, `Dockerfile`,`run` are relevant to those working on Robotics stuff.
