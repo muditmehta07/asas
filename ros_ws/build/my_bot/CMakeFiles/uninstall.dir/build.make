@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/d/code/Major-Project/ros_ws/src/my_bot
+CMAKE_SOURCE_DIR = /home/mudit/Major-Project/ros_ws/src/my_bot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/d/code/Major-Project/ros_ws/build/my_bot
+CMAKE_BINARY_DIR = /home/mudit/Major-Project/ros_ws/build/my_bot
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /mnt/d/code/Major-Project/ros_ws/build/my_bot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/d/code/Major-Project/ros_ws/src/my_bot /mnt/d/code/Major-Project/ros_ws/src/my_bot /mnt/d/code/Major-Project/ros_ws/build/my_bot /mnt/d/code/Major-Project/ros_ws/build/my_bot /mnt/d/code/Major-Project/ros_ws/build/my_bot/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mudit/Major-Project/ros_ws/build/my_bot && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mudit/Major-Project/ros_ws/src/my_bot /home/mudit/Major-Project/ros_ws/src/my_bot /home/mudit/Major-Project/ros_ws/build/my_bot /home/mudit/Major-Project/ros_ws/build/my_bot /home/mudit/Major-Project/ros_ws/build/my_bot/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 
