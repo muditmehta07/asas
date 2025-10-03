@@ -1,10 +1,11 @@
 # Major-Project
 
-## About
+## aiml_ws
 
-1. Developing a robot in a 3D simulated environment to generate a map using a lidar sensor and slam operations.
-2. This map would then be converted into a human interpretable map with sharp visuals using CNN.
+-> in case people working on aiml_ws want to document anything, you can do it here
 
-`aiml_ws` is relevant to those working on AIML stuff.
+## ros_ws
 
-`ros_ws`, `Dockerfile`,`run` are relevant to those working on Robotics stuff.
+### quick commands
+-> rosLaunch : ros2 launch my_bot rsp.launch.py
+-> jointStatePublisher : ros2 joint_state_publisher_gui joint_state_publisher_gui
