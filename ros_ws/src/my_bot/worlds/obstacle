@@ -145,63 +145,63 @@
       </spot>
     </light>
     <state world_name='default'>
-      <sim_time>422 390000000</sim_time>
-      <real_time>90 505284174</real_time>
-      <wall_time>1770374522 49098960</wall_time>
-      <iterations>87197</iterations>
-      <model name='Untitled'>
-        <pose>2.72694 -2.95904 1.73165 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <model name='rack'>
-          <pose>2.72694 -2.95905 1.73165 0 -0 0</pose>
-          <scale>1 1 1</scale>
-          <link name='base_link'>
-            <pose>2.72694 -2.95905 1.73165 0 -0 0</pose>
-            <velocity>0 0 0 0 -0 0</velocity>
-            <acceleration>0 0 0 0 -0 0</acceleration>
-            <wrench>0 0 0 0 -0 0</wrench>
-          </link>
-        </model>
-      </model>
-      <model name='Untitled_clone'>
-        <pose>2.72 -3.0755 1.73165 0 0 -3.13194</pose>
-        <scale>1 1 1</scale>
-        <model name='rack'>
-          <pose>2.72 -3.07549 1.73165 0 0 -3.13194</pose>
-          <scale>1 1 1</scale>
-          <link name='base_link'>
-            <pose>2.72 -3.07549 1.73165 0 0 -3.13194</pose>
-            <velocity>0 0 0 0 -0 0</velocity>
-            <acceleration>0 0 0 0 -0 0</acceleration>
-            <wrench>0 0 0 0 -0 0</wrench>
-          </link>
-        </model>
-      </model>
+      <sim_time>1272 515000000</sim_time>
+      <real_time>2239 124729413</real_time>
+      <wall_time>1770376902 760269887</wall_time>
+      <iterations>850125</iterations>
       <model name='Untitled_clone_0'>
-        <pose>5.68701 -2.94805 1.73165 0 -0 0</pose>
+        <pose>8.48569 -10.5923 1.74 2e-06 -0 0.000575</pose>
         <scale>1 1 1</scale>
         <model name='rack'>
-          <pose>5.68701 -2.94806 1.73165 0 -0 0</pose>
+          <pose>8.48569 -10.5923 1.74 2e-06 -0 0.000575</pose>
           <scale>1 1 1</scale>
           <link name='base_link'>
-            <pose>5.68701 -2.94806 1.73165 0 -0 0</pose>
+            <pose>8.48569 -10.5923 1.74 2e-06 -0 0.000575</pose>
             <velocity>0 0 0 0 -0 0</velocity>
-            <acceleration>0 0 0 0 -0 0</acceleration>
-            <wrench>0 0 0 0 -0 0</wrench>
+            <acceleration>2.90084 -1.25325 -6.14876 -0.509566 -0.032669 -2.53618</acceleration>
+            <wrench>2642.43 -1141.61 -5601.02 0 -0 0</wrench>
           </link>
         </model>
       </model>
       <model name='Untitled_clone_clone'>
-        <pose>5.69159 -3.047 1.73165 0 0 -3.13194</pose>
+        <pose>8.45494 10.6269 1.74 2e-06 -0 -3.13138</pose>
         <scale>1 1 1</scale>
         <model name='rack'>
-          <pose>5.69159 -3.04699 1.73165 0 0 -3.13194</pose>
+          <pose>8.45494 10.6269 1.74 2e-06 -0 -3.13138</pose>
           <scale>1 1 1</scale>
           <link name='base_link'>
-            <pose>5.69159 -3.04699 1.73165 0 0 -3.13194</pose>
+            <pose>8.45494 10.6269 1.74 2e-06 -0 -3.13138</pose>
             <velocity>0 0 0 0 -0 0</velocity>
-            <acceleration>0 0 0 0 -0 0</acceleration>
-            <wrench>0 0 0 0 -0 0</wrench>
+            <acceleration>-2.91307 1.22535 -6.1484 0.46191 0.064888 -2.62467</acceleration>
+            <wrench>-2653.57 1116.2 -5600.69 0 -0 0</wrench>
+          </link>
+        </model>
+      </model>
+      <model name='Untitled_clone_clone_clone'>
+        <pose>5.34401 10.5993 1.73999 0 5e-06 -3.13163</pose>
+        <scale>1 1 1</scale>
+        <model name='rack'>
+          <pose>5.34401 10.5993 1.73999 0 5e-06 -3.13163</pose>
+          <scale>1 1 1</scale>
+          <link name='base_link'>
+            <pose>5.34401 10.5993 1.73999 0 5e-06 -3.13163</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>-8.61388 -1.1387 1.47461 -0.175399 0.620884 2.81619</acceleration>
+            <wrench>-7846.54 -1037.26 1343.25 0 -0 0</wrench>
+          </link>
+        </model>
+      </model>
+      <model name='Untitled_clone_clone_clone_clone'>
+        <pose>2.17442 10.6018 1.74 2e-06 -0 -3.13145</pose>
+        <scale>1 1 1</scale>
+        <model name='rack'>
+          <pose>2.17442 10.6018 1.74 2e-06 -0 -3.13145</pose>
+          <scale>1 1 1</scale>
+          <link name='base_link'>
+            <pose>2.17442 10.6018 1.74 2e-06 -0 -3.13145</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>-2.91298 1.22556 -6.1484 0.462264 0.064558 -2.62467</acceleration>
+            <wrench>-2653.49 1116.38 -5600.69 0 -0 0</wrench>
           </link>
         </model>
       </model>
@@ -216,25 +216,25 @@
         </link>
       </model>
       <model name='my_bot'>
-        <pose>0.018311 -0.037609 0.050001 3e-06 6e-06 -0.4226</pose>
+        <pose>-0.153268 -0.581958 0.050001 1e-06 9e-06 -0.892261</pose>
         <scale>1 1 1</scale>
         <link name='base_link'>
-          <pose>0.018311 -0.037609 0.050001 3e-06 6e-06 -0.4226</pose>
-          <velocity>-0.001778 -0.00274 0.005642 -0.019091 0.012827 -0.004698</velocity>
-          <acceleration>1.10759 3.45786 9.17263 -2.63109 0.958508 2.85182</acceleration>
-          <wrench>0.775313 2.4205 6.42084 0 -0 0</wrench>
+          <pose>-0.153268 -0.581958 0.050001 1e-06 9e-06 -0.892261</pose>
+          <velocity>-0.000855 -0.000996 0.005331 -0.013411 0.017354 -0.001241</velocity>
+          <acceleration>2.28248 2.08297 9.54235 2.45394 0.598652 0.651668</acceleration>
+          <wrench>1.59774 1.45808 6.67964 0 -0 0</wrench>
         </link>
         <link name='left_wheel'>
-          <pose>0.090084 0.121995 0.050001 -1.57086 0.102574 -0.422602</pose>
-          <velocity>0.000136 -0.00114 0.001305 0.021626 0.006241 -0.00431</velocity>
-          <acceleration>-0.001687 -0.634241 -4.10393 1.61799 -0.75326 -0.301657</acceleration>
-          <wrench>-0.000169 -0.063424 -0.410393 0 -0 0</wrench>
+          <pose>-0.017032 -0.472119 0.050002 1.57086 -0.567587 2.2493</pose>
+          <velocity>-0.000327 -0.000763 0.001385 0.01244 -0.004751 0.000182</velocity>
+          <acceleration>-0.119512 -1.49426 -3.92153 1.32992 1.08708 2.88507</acceleration>
+          <wrench>-0.011951 -0.149426 -0.392153 0 -0 0</wrench>
         </link>
         <link name='right_wheel'>
-          <pose>-0.053461 -0.197212 0.05 1.57093 -0.983313 -0.422702</pose>
-          <velocity>-0.001465 -0.000958 0.009581 0.015388 -0.028284 0.004291</velocity>
-          <acceleration>-0.47693 -1.36685 21.6228 -1.1911 -1.20241 2.49972</acceleration>
-          <wrench>-0.047693 -0.136685 2.16228 0 -0 0</wrench>
+          <pose>-0.289503 -0.691796 0.050001 1.57122 1.28447 -0.891855</pose>
+          <velocity>-0.000609 -0.000516 0.009259 0.00951 -0.01155 -0.000747</velocity>
+          <acceleration>-1.10978 -1.28098 21.6345 2.26181 -1.38036 2.67942</acceleration>
+          <wrench>-0.110978 -0.128098 2.16345 0 -0 0</wrench>
         </link>
       </model>
       <light name='user_point_light_0'>
@@ -252,7 +252,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>7.07682 -3.13149 2.19601 -0 0.546148 2.58769</pose>
+        <pose>10.4411 6.25858 5.68476 -0 0.546148 2.58769</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -603,118 +603,6 @@
       </plugin>
       <pose>0 0 0 0 -0 0</pose>
     </model>
-    <model name='Untitled'>
-      <model name='rack'>
-        <link name='base_link'>
-          <inertial>
-            <pose>0 0.102784 -0.917318 0 -0 0</pose>
-            <mass>910.918</mass>
-            <inertia>
-              <ixx>250.063</ixx>
-              <ixy>2.53768e-14</ixy>
-              <ixz>9.01471e-14</ixz>
-              <iyy>885.929</iyy>
-              <iyz>9.52421</iyz>
-              <izz>685.987</izz>
-            </inertia>
-          </inertial>
-          <collision name='base_link_collision'>
-            <pose>0 0 0 0 -0 0</pose>
-            <geometry>
-              <mesh>
-                <scale>1 1 1</scale>
-                <uri>https://fuel.ignitionrobotics.org/1.0/sanjay/models/supermarket_rack/1/files/meshes/base_link.STL</uri>
-              </mesh>
-            </geometry>
-            <max_contacts>10</max_contacts>
-            <surface>
-              <contact>
-                <ode/>
-              </contact>
-              <bounce/>
-              <friction>
-                <torsional>
-                  <ode/>
-                </torsional>
-                <ode/>
-              </friction>
-            </surface>
-          </collision>
-          <visual name='base_link_visual'>
-            <pose>0 0 0 0 -0 0</pose>
-            <geometry>
-              <mesh>
-                <scale>1 1 1</scale>
-                <uri>https://fuel.ignitionrobotics.org/1.0/sanjay/models/supermarket_rack/1/files/meshes/base_link.STL</uri>
-              </mesh>
-            </geometry>
-          </visual>
-          <self_collide>0</self_collide>
-          <enable_wind>0</enable_wind>
-          <kinematic>0</kinematic>
-        </link>
-        <pose>-1e-06 -5e-06 0 0 -0 0</pose>
-      </model>
-      <static>0</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>2.72694 -5.51276 0 0 -0 0</pose>
-    </model>
-    <model name='Untitled_clone'>
-      <model name='rack'>
-        <link name='base_link'>
-          <inertial>
-            <pose>0 0.102784 -0.917318 0 -0 0</pose>
-            <mass>910.918</mass>
-            <inertia>
-              <ixx>250.063</ixx>
-              <ixy>2.53768e-14</ixy>
-              <ixz>9.01471e-14</ixz>
-              <iyy>885.929</iyy>
-              <iyz>9.52421</iyz>
-              <izz>685.987</izz>
-            </inertia>
-          </inertial>
-          <collision name='base_link_collision'>
-            <pose>0 0 0 0 -0 0</pose>
-            <geometry>
-              <mesh>
-                <scale>1 1 1</scale>
-                <uri>https://fuel.ignitionrobotics.org/1.0/sanjay/models/supermarket_rack/1/files/meshes/base_link.STL</uri>
-              </mesh>
-            </geometry>
-            <max_contacts>10</max_contacts>
-            <surface>
-              <contact>
-                <ode/>
-              </contact>
-              <bounce/>
-              <friction>
-                <torsional>
-                  <ode/>
-                </torsional>
-                <ode/>
-              </friction>
-            </surface>
-          </collision>
-          <visual name='base_link_visual'>
-            <pose>0 0 0 0 -0 0</pose>
-            <geometry>
-              <mesh>
-                <scale>1 1 1</scale>
-                <uri>https://fuel.ignitionrobotics.org/1.0/sanjay/models/supermarket_rack/1/files/meshes/base_link.STL</uri>
-              </mesh>
-            </geometry>
-          </visual>
-          <self_collide>0</self_collide>
-          <enable_wind>0</enable_wind>
-          <kinematic>0</kinematic>
-        </link>
-        <pose>-1e-06 -5e-06 0 0 -0 0</pose>
-      </model>
-      <static>0</static>
-      <allow_auto_disable>1</allow_auto_disable>
-      <pose>2.62499 -4.27405 1.73165 0 -0 0</pose>
-    </model>
     <model name='Untitled_clone_clone'>
       <model name='rack'>
         <link name='base_link'>
@@ -826,6 +714,118 @@
       <static>0</static>
       <allow_auto_disable>1</allow_auto_disable>
       <pose>5.68701 -2.94805 1.73165 0 -0 0</pose>
+    </model>
+    <model name='Untitled_clone_clone_clone'>
+      <model name='rack'>
+        <link name='base_link'>
+          <inertial>
+            <pose>0 0.102784 -0.917318 0 -0 0</pose>
+            <mass>910.918</mass>
+            <inertia>
+              <ixx>250.063</ixx>
+              <ixy>2.53768e-14</ixy>
+              <ixz>9.01471e-14</ixz>
+              <iyy>885.929</iyy>
+              <iyz>9.52421</iyz>
+              <izz>685.987</izz>
+            </inertia>
+          </inertial>
+          <collision name='base_link_collision'>
+            <pose>0 0 0 0 -0 0</pose>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>https://fuel.ignitionrobotics.org/1.0/sanjay/models/supermarket_rack/1/files/meshes/base_link.STL</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='base_link_visual'>
+            <pose>0 0 0 0 -0 0</pose>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>https://fuel.ignitionrobotics.org/1.0/sanjay/models/supermarket_rack/1/files/meshes/base_link.STL</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>-1e-06 -5e-06 0 0 -0 0</pose>
+      </model>
+      <static>0</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>5.34396 10.5993 1.74 2e-06 -0 -3.13138</pose>
+    </model>
+    <model name='Untitled_clone_clone_clone_clone'>
+      <model name='rack'>
+        <link name='base_link'>
+          <inertial>
+            <pose>0 0.102784 -0.917318 0 -0 0</pose>
+            <mass>910.918</mass>
+            <inertia>
+              <ixx>250.063</ixx>
+              <ixy>2.53768e-14</ixy>
+              <ixz>9.01471e-14</ixz>
+              <iyy>885.929</iyy>
+              <iyz>9.52421</iyz>
+              <izz>685.987</izz>
+            </inertia>
+          </inertial>
+          <collision name='base_link_collision'>
+            <pose>0 0 0 0 -0 0</pose>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>https://fuel.ignitionrobotics.org/1.0/sanjay/models/supermarket_rack/1/files/meshes/base_link.STL</uri>
+              </mesh>
+            </geometry>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='base_link_visual'>
+            <pose>0 0 0 0 -0 0</pose>
+            <geometry>
+              <mesh>
+                <scale>1 1 1</scale>
+                <uri>https://fuel.ignitionrobotics.org/1.0/sanjay/models/supermarket_rack/1/files/meshes/base_link.STL</uri>
+              </mesh>
+            </geometry>
+          </visual>
+          <self_collide>0</self_collide>
+          <enable_wind>0</enable_wind>
+          <kinematic>0</kinematic>
+        </link>
+        <pose>-1e-06 -5e-06 0 0 -0 0</pose>
+      </model>
+      <static>0</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose>2.17448 10.6021 1.73999 0 5e-06 -3.13163</pose>
     </model>
   </world>
 </sdf>
