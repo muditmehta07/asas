@@ -1,0 +1,36 @@
+<sdf version='1.7'>
+  <model name='rack'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0 0.102784 -0.917318 0 -0 0</pose>
+        <mass>910.918</mass>
+        <inertia>
+          <ixx>250.063</ixx>
+          <ixy>2.53768e-14</ixy>
+          <ixz>9.01471e-14</ixz>
+          <iyy>885.929</iyy>
+          <iyz>9.52421</iyz>
+          <izz>685.987</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_store_rack/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://my_store_rack/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

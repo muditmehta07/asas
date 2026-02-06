@@ -1,0 +1,30 @@
+TERMINAL 1
+
+```bash
+./launch.sh
+```
+
+TERMINAL 2
+
+```bash
+source /opt/ros/humble/setup.bash
+ros2 launch rosbridge_server rosbridge_websocket_launch.xml
+```
+
+TERMINAL 3
+
+```bash
+source /opt/ros/humble/setup.bash
+ros2 run web_video_server web_video_server
+```
+
+TERMINAL 4
+
+```bash
+cd ~/major-project/ros-ui-react
+npm run dev
+```
+
+CAMERA PUBLISHED @
+
+http://localhost:8080/stream?topic=/camera/image_raw
