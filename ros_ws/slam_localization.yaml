@@ -1,0 +1,19 @@
+slam_toolbox:
+  ros__parameters:
+    use_sim_time: true
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_link
+    scan_topic: /scan
+
+    # Disable timing sensitivity
+    minimum_time_interval: 0.0
+    transform_timeout: 1.0
+    tf_buffer_duration: 30.0
+
+    # Force localization mode
+    mode: localization
+
+    # Allow pose publishing
+    publish_pose: true
+    pose_publish_period: 0.05

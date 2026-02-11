@@ -1,7 +1,7 @@
 import './Dashboard.css';
 import CameraFeed from './CameraFeed';
-import Map from './Map';
 import ShopAssist from './ShopAssist';
+import Map from './Map';
 
 const Dashboard = () => {
     return (
