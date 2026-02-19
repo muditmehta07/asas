@@ -14,9 +14,9 @@ const Dashboard = () => {
                     </div>
                 </div>
 
-                <div className="dashboard-card map-card" style={{ height: '50%' }}>
+                <div className="dashboard-card camera-card" style={{ height: '50%' }}>
                     <h2>Map</h2>
-                    <div className="map-wrapper">
+                    <div className="camera-feed-wrapper">
                         <Map />
                     </div>
                 </div>
