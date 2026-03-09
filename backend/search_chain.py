@@ -98,3 +98,55 @@ def search_item(query: str) -> dict:
             f"Stock: {item.get('stock', 0)} units."
         ),
     }
+
+
+def get_nearest_rack(x: float, y: float, max_dist: float = 2.0) -> dict | None:
+    """Find the nearest rack using Euclidean distance in Cartesian space."""
+    racks = list(_racks_col.find({}, {"_id": 0}))
+    nearest = None
+    min_d = max_dist
+    
+    for r in racks:
+        dp = r.get("dock_point")
+        if not dp:
+            continue
+        
+        dx = dp["x"] - x
+        dy = dp["y"] - y
+        dist = (dx**2 + dy**2)**0.5
+        
+        if dist < min_d:
+            min_d = dist
+            nearest = r
+            
+    return nearest
+
+
+def get_rack_items(rack_id: str) -> list[dict]:
+    """Fetch all items for a given rack_id from rack_inventory."""
+    doc = _inv_col.find_one({"rack_id": rack_id}, {"_id": 0, "items": 1})
+    if doc and "items" in doc:
+        return doc["items"]
+    return []
+
+
+def get_all_inventory() -> list[dict]:
+    """Fetch all racks and their items, returned as a list of rack-grouped items."""
+    # Build a map of rack_id -> items
+    inventory_docs = list(_inv_col.find({}, {"_id": 0, "rack_id": 1, "items": 1}))
+    inventory_map = {doc["rack_id"]: doc.get("items", []) for doc in inventory_docs}
+    
+    # Get all racks to include metadata (like group/zone) even if empty
+    racks = list(_racks_col.find({}, {"_id": 0, "rack_id": 1, "group": 1, "zone": 1, "dock_point": 1}).sort("rack_id", 1))
+    
+    result = []
+    for rack in racks:
+        rid = rack["rack_id"]
+        result.append({
+            "rack_id": rid,
+            "group": rack.get("group", ""),
+            "zone": rack.get("zone", ""),
+            "dock_point": rack.get("dock_point"),
+            "items": inventory_map.get(rid, [])
+        })
+    return result

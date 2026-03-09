@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 
+const USD_TO_INR = 83.0;
+
 const ShopAssist = () => {
     const [query, setQuery] = useState('');
     const [messages, setMessages] = useState([
@@ -101,8 +103,15 @@ const ShopAssist = () => {
                             fontSize: '0.95rem',
                             lineHeight: '1.4'
                         }}>
-                            {/* Simple markdown bolding for the text */}
-                            <span dangerouslySetInnerHTML={{ __html: msg.text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }}></span>
+                            {/* Simple markdown bolding for the text and USD -> INR conversion */}
+                            <span dangerouslySetInnerHTML={{
+                                __html: msg.text
+                                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                                    .replace(/\$(\d+(\.\d{1,2})?)/g, (match, p1) => {
+                                        const inr = (parseFloat(p1) * USD_TO_INR).toLocaleString('en-IN', { maximumFractionDigits: 0 });
+                                        return `₹${inr}`;
+                                    })
+                            }}></span>
                         </div>
 
                         {/* Item Card (if found) */}
@@ -128,7 +137,7 @@ const ShopAssist = () => {
                                 <div style={{ fontSize: '1.1rem', fontWeight: 600 }}>{msg.itemData.item_name}</div>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '4px' }}>
                                     <span style={{ fontSize: '1.2rem', color: 'var(--text-primary)' }}>
-                                        ${msg.itemData.price.toFixed(2)}
+                                        ₹{(msg.itemData.price * USD_TO_INR).toLocaleString('en-IN', { maximumFractionDigits: 0 })}
                                     </span>
                                     <button
                                         onClick={() => handleNavigate(msg.itemData)}
@@ -182,7 +191,7 @@ const ShopAssist = () => {
                     <input
                         type="text"
                         className="chat-input"
-                        placeholder="Search for an item (e.g. 'brown woven sweater')..."
+                        placeholder="Search for an item..."
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
                         onKeyDown={(e) => e.key === 'Enter' && handleSearch()}

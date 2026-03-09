@@ -3,27 +3,35 @@
   --bg-primary: #0a0a0c;
   --bg-secondary: rgba(20, 20, 25, 0.7);
   --bg-tertiary: rgba(35, 35, 45, 0.6);
-  
+
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
-  
+
   --text-primary: #f0f0f5;
   --text-secondary: #a0a0b0;
-  
+
   --accent-color: #6366f1;
   --accent-hover: #4f46e5;
-  
+
   --success: #10b981;
   --warning: #f59e0b;
   --error: #ef4444;
-  
-  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --font-main: 'Outfit', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
 }
 
 body {
@@ -46,13 +54,16 @@ body {
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
 }

@@ -2,14 +2,23 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import logging
+from contextlib import asynccontextmanager
 
-from search_chain import search_item
+import search_chain
 import nav_bridge
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
 
-app = FastAPI(title="ShopAssist API")
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Initialize the ROS 2 bridge on startup
+    nav_bridge.init()
+    yield
+    # Cleanup on shutdown
+    nav_bridge.shutdown()
+
+app = FastAPI(title="ShopAssist API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -37,7 +46,7 @@ async def api_search(req: SearchRequest):
     
     log.info(f"Searching for: {req.query}")
     try:
-        result = search_item(req.query)
+        result = search_chain.search_item(req.query)
         return result
     except Exception as e:
         log.error(f"Search error: {e}")
@@ -63,4 +72,40 @@ async def api_navigate(req: NavRequest):
 async def api_nav_status():
     """Returns the current navigation state (IDLE, SENDING, NAVIGATING, ERROR)."""
     return nav_bridge.get_status()
+
+
+@app.get("/detected_items")
+async def api_detected_items():
+    """Returns items of the rack the robot is currently next to."""
+    status = nav_bridge.get_status()
+    pos = status.get("position", {"x": 0.0, "y": 0.0})
+    
+    # Try to find a rack within 2.0 meters
+    nearest = search_chain.get_nearest_rack(pos["x"], pos["y"], max_dist=2.0)
+    
+    if nearest:
+        items = search_chain.get_rack_items(nearest["rack_id"])
+        return {
+            "rack_id": nearest["rack_id"],
+            "items": items,
+            "position": pos
+        }
+    
+    return {
+        "rack_id": None,
+        "items": [],
+        "position": pos
+    }
+
+
+@app.post("/stop")
+async def api_stop():
+    """Immediately stops the robot by canceling the current Nav2 goal."""
+    return nav_bridge.stop_navigation()
+
+
+@app.get("/inventory")
+async def api_inventory():
+    """Returns the entire store inventory grouped by rack."""
+    return search_chain.get_all_inventory()
 
