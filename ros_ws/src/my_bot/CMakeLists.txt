@@ -25,4 +25,12 @@ install(
   DESTINATION share/${PROJECT_NAME}
 )
 
+find_package(ament_cmake_python REQUIRED)
+ament_python_install_package(${PROJECT_NAME})
+install(PROGRAMS
+  my_bot/nav_server.py
+  DESTINATION lib/${PROJECT_NAME}
+  RENAME nav_server
+)
+
 ament_package()

@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <!-- LIDAR JOINT-->
-
     <joint name="laser_joint" type="fixed">
         <parent link="chassis"/>
         <child link="laser_frame"/>
@@ -34,7 +32,6 @@
     <visualize>true</visualize>
     <update_rate>10</update_rate>
 
-    <!-- THIS IS CRITICAL -->
     <frame>laser_frame</frame>
 
     <ray>
@@ -55,9 +52,10 @@
 
     <plugin name="laser_controller" filename="libgazebo_ros_ray_sensor.so">
         <ros>
-        <namespace>/</namespace>
-        <remapping>~/out:=/scan</remapping>
+            <namespace>/</namespace>
+            <remapping>~/out:=/scan</remapping>
         </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
         <frame_name>laser_frame</frame_name>
     </plugin>
 
