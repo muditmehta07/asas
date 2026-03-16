@@ -1,33 +1,11 @@
-LAUNCH SIM
+# Autonomous Shopper Assistance System
+
+Start Backend
 ```
-cd ros_ws
-./launch.sh
+uvicorn main:app --reload
 ```
 
-LAUNCH ROSBRIDGE
+Start Frontend
 ```
-cd ros_ws
-./rosbridge.sh
-```
-
-LAUNCH WEBVIDEO SERVER
-```
-cd ros_ws
-./webvideo.sh
-```
-
-START NAV2 NODE
-```
-cd ros_ws
-./nav2.sh
-```
-
-START BACKEND
-```
-sudo docker run -p 8000:8000 backend
-```
-
-START FRONTEND
-```
-sudo docker run -p 5173:5173 frontend
+npm run dev
 ```
