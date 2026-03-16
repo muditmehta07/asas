@@ -1,0 +1,33 @@
+services:
+
+  ros:
+    build:
+      context: ./ros_ws
+      dockerfile: Dockerfile
+    container_name: shopassist_ros
+    network_mode: host       # ROS DDS needs host networking to talk to the backend
+    environment:
+      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix  # needed if any GUI tools are used
+    restart: unless-stopped
+
+  backend:
+    build: ./backend
+    container_name: shopassist_backend
+    environment:
+      - MONGO_URI=mongodb://host.docker.internal:27017
+      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+    env_file:
+      - ./backend/.env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    network_mode: host       # must match ros service for DDS discovery
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: shopassist_frontend
+    ports:
+      - "5173:5173"
+    restart: unless-stopped
