@@ -5,24 +5,23 @@ services:
       context: ./ros_ws
       dockerfile: Dockerfile
     container_name: shopassist_ros
-    network_mode: host       # ROS DDS needs host networking to talk to the backend
+    network_mode: host
     environment:
-      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+      - DISPLAY=$DISPLAY
+      - QT_X11_NO_MITSHM=1
+      - MONGO_URI=mongodb://localhost:27017
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix  # needed if any GUI tools are used
+      - /tmp/.X11-unix:/tmp/.X11-unix
     restart: unless-stopped
 
   backend:
     build: ./backend
     container_name: shopassist_backend
     environment:
-      - MONGO_URI=mongodb://host.docker.internal:27017
-      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+      - MONGO_URI=mongodb://localhost:27017
     env_file:
       - ./backend/.env
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    network_mode: host       # must match ros service for DDS discovery
+    network_mode: host
     restart: unless-stopped
 
   frontend:
@@ -31,3 +30,22 @@ services:
     ports:
       - "5173:5173"
     restart: unless-stopped
+
+  mongo:
+    image: mongo:7
+    container_name: shopassist_mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+      - ./mongo-seed:/mongo-seed
+      - ./mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
