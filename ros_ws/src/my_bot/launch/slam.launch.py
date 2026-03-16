@@ -93,7 +93,7 @@ def generate_launch_description():
         ]
     )
 
-    map_file = os.path.join('/home/mudit/major-project/map/', 'my_map.yaml')
+    map_file = os.path.join('~/major-project/map/', 'my_map.yaml')
 
     map_server = TimerAction(
         period=7.0,

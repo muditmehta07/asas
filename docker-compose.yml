@@ -12,6 +12,8 @@ services:
       - MONGO_URI=mongodb://localhost:27017
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
+      - /home/mudit/major-project/map:/home/mudit/major-project/map
+      - /home/mudit/major-project/map:/root/major-project/map
     restart: unless-stopped
 
   backend:
@@ -41,7 +43,7 @@ services:
       - ./mongo-seed:/mongo-seed
       - ./mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh
     healthcheck:
-      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')"]
+      test: [ "CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')" ]
       interval: 10s
       timeout: 5s
       retries: 5

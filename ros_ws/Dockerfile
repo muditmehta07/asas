@@ -17,11 +17,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-async-web-server-cpp \
     ros-humble-gazebo-ros-pkgs \
     ros-humble-xacro \
+    ros-humble-rviz2 \
     python3-colcon-common-extensions \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python deps needed by my_bot
 RUN pip3 install --no-cache-dir pymongo python-dotenv
 
 COPY . /ros_ws/
