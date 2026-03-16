@@ -23,7 +23,11 @@ cd ros_ws
 ```
 
 START BACKEND
+```
 sudo docker run -p 8000:8000 backend
+```
 
-START DASHBOARD
+START FRONTEND
+```
 sudo docker run -p 5173:5173 frontend
+```
