@@ -3,3 +3,4 @@ ros_ws/install/
 ros_ws/log/
 frontend/node_modules/
 mongo-seed/
+backend/__pycache__
