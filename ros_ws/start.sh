@@ -1,9 +1,6 @@
 #!/bin/bash
 set -e
 
-# Make ~/major-project resolve correctly inside the container
-ln -sf /home/mudit/major-project /root/major-project
-
 # Source ROS 2 and the workspace
 source /opt/ros/humble/setup.bash
 source /ros_ws/install/setup.bash

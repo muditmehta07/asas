@@ -55,7 +55,7 @@ def generate_launch_description():
         ),
         launch_arguments={
             'use_sim_time': 'true',
-            'map': '/home/mudit/major-project/map/my_map.yaml',
+            'map': os.path.join(pkg_share, 'map', 'my_map.yaml'),
             'params_file': nav2_params_file,
         }.items()
     )
@@ -93,7 +93,7 @@ def generate_launch_description():
                 ),
                 launch_arguments={
                     'use_sim_time': 'false',
-                    'map': '/home/mudit/major-project/map/my_map.yaml',
+                    'map': os.path.join(pkg_share, 'map', 'my_map.yaml'),
                     'params_file': nav2_params_file,
                 }.items()
             )

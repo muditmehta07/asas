@@ -13,8 +13,6 @@ services:
       - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
-      - /home/mudit/major-project/map:/home/mudit/major-project/map
-      - /home/mudit/major-project/map:/root/major-project/map
     restart: unless-stopped
 
   frontend:
