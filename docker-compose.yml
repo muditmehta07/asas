@@ -2,28 +2,19 @@ services:
 
   ros:
     build:
-      context: ./ros_ws
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: ros_ws/Dockerfile
     container_name: shopassist_ros
     network_mode: host
     environment:
       - DISPLAY=$DISPLAY
       - QT_X11_NO_MITSHM=1
       - MONGO_URI=mongodb://localhost:27017
+      - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - /home/mudit/major-project/map:/home/mudit/major-project/map
       - /home/mudit/major-project/map:/root/major-project/map
-    restart: unless-stopped
-
-  backend:
-    build: ./backend
-    container_name: shopassist_backend
-    environment:
-      - MONGO_URI=mongodb://localhost:27017
-    env_file:
-      - ./backend/.env
-    network_mode: host
     restart: unless-stopped
 
   frontend:

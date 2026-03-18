@@ -1,19 +1,26 @@
 import os
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, RegisterEventHandler
+from launch.actions import IncludeLaunchDescription, RegisterEventHandler, DeclareLaunchArgument, OpaqueFunction
 from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
 
 
 def generate_launch_description():
-
     package_name = 'my_bot'
     pkg_share = get_package_share_directory(package_name)
     nav2_bringup_dir = get_package_share_directory('nav2_bringup')
-
     nav2_params_file = os.path.join(pkg_share, 'config', 'nav2_params.yaml')
+
+    headless_arg = DeclareLaunchArgument(
+        'headless',
+        default_value='false',
+        description='Run without Gazebo and RViz2 (no display required)'
+    )
+
+    headless = LaunchConfiguration('headless')
 
     rsp = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -48,7 +55,7 @@ def generate_launch_description():
         ),
         launch_arguments={
             'use_sim_time': 'true',
-            'map': '~/major-project/map/my_map.yaml',
+            'map': '/home/mudit/major-project/map/my_map.yaml',
             'params_file': nav2_params_file,
         }.items()
     )
@@ -74,16 +81,40 @@ def generate_launch_description():
         output='screen'
     )
 
-    nav2_after_spawn = RegisterEventHandler(
-        OnProcessExit(
-            target_action=spawn_entity,
-            on_exit=[nav2, nav_server, rviz],
-        )
-    )
+    def launch_setup(context):
+        is_headless = context.launch_configurations.get('headless', 'false').lower() == 'true'
+
+        if is_headless:
+            # Headless: no Gazebo, no RViz2, no simulation time
+            # Run Nav2 and nav_server directly
+            nav2_headless = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource(
+                    os.path.join(nav2_bringup_dir, 'launch', 'bringup_launch.py')
+                ),
+                launch_arguments={
+                    'use_sim_time': 'false',
+                    'map': '/home/mudit/major-project/map/my_map.yaml',
+                    'params_file': nav2_params_file,
+                }.items()
+            )
+            nav_server_headless = Node(
+                package='my_bot',
+                executable='nav_server',
+                name='shop_assist_nav_server',
+                output='screen'
+            )
+            return [nav2_headless, nav_server_headless]
+        else:
+            nav2_after_spawn = RegisterEventHandler(
+                OnProcessExit(
+                    target_action=spawn_entity,
+                    on_exit=[nav2, nav_server, rviz],
+                )
+            )
+            return [gazebo, spawn_entity, nav2_after_spawn]
 
     return LaunchDescription([
+        headless_arg,
         rsp,
-        gazebo,
-        spawn_entity,
-        nav2_after_spawn
+        OpaqueFunction(function=launch_setup)
     ])

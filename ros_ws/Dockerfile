@@ -20,15 +20,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-rviz2 \
     python3-colcon-common-extensions \
     python3-pip \
+    x11-utils \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --no-cache-dir pymongo python-dotenv
 
-COPY . /ros_ws/
+COPY backend/requirements.txt /tmp/backend_requirements.txt
+RUN pip3 install --no-cache-dir -r /tmp/backend_requirements.txt
+
+COPY backend/main.py backend/nav_bridge.py backend/search_chain.py /backend/
+
+COPY ros_ws/ /ros_ws/
 WORKDIR /ros_ws
 RUN /bin/bash -c "source /opt/ros/humble/setup.bash && colcon build --symlink-install"
 
-COPY start.sh /start.sh
+COPY ros_ws/start.sh /start.sh
 RUN chmod +x /start.sh
 
 CMD ["/start.sh"]

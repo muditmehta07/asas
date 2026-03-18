@@ -3,6 +3,7 @@ from rclpy.node import Node
 from geometry_msgs.msg import PoseStamped, PoseWithCovarianceStamped
 from nav2_msgs.action import NavigateToPose
 from rclpy.action import ActionClient
+from rclpy.qos import QoSProfile, QoSDurabilityPolicy, QoSReliabilityPolicy
 import math
 import threading
 import logging
@@ -35,11 +36,17 @@ class NavBridge:
         self.pub = self.node.create_publisher(PoseStamped, "/goal_pose", 10)
         self.action_client = ActionClient(self.node, NavigateToPose, 'navigate_to_pose')
 
+        amcl_qos = QoSProfile(
+            depth=10,
+            durability=QoSDurabilityPolicy.TRANSIENT_LOCAL,
+            reliability=QoSReliabilityPolicy.RELIABLE
+        )
+
         self.sub = self.node.create_subscription(
             PoseWithCovarianceStamped,
             "/amcl_pose",
             self._pose_callback,
-            10
+            amcl_qos
         )
         
         self._running = True
