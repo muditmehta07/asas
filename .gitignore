@@ -1,9 +1,18 @@
 ros_ws/build/
 ros_ws/install/
 ros_ws/log/
-frontend/node_modules
-backend/__pycache__
-docker-compose.yml
-ros_ws/Dockerfile
-frontend/Dockerfile
 
+frontend/node_modules/
+frontend/dist/
+
+**/__pycache__/
+*.py[cod]
+.venv/
+
+docker-compose.yml
+docker-compose.override.yml
+**/Dockerfile
+**/.dockerignore
+
+.env
+*.env
