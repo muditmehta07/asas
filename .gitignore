@@ -3,3 +3,7 @@ ros_ws/install/
 ros_ws/log/
 frontend/node_modules
 backend/__pycache__
+docker-compose.yml
+ros_ws/Dockerfile
+frontend/Dockerfile
+
