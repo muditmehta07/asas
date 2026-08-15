@@ -3,15 +3,28 @@ services:
     build:
       context: .
       dockerfile: ros_ws/Dockerfile
+      args:
+        DOCKER_BUILDKIT: 1
     container_name: shopassist_ros
-    network_mode: host
+    ipc: host
     environment:
-      - DISPLAY=$DISPLAY
+      - DISPLAY=${DISPLAY:-:0}
+      - WAYLAND_DISPLAY=${WAYLAND_DISPLAY}
+      - XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR}
+      - PULSE_SERVER=${PULSE_SERVER}
       - QT_X11_NO_MITSHM=1
-      - MONGO_URI=mongodb://127.0.0.1:27017
+      - MONGO_URI=mongodb://mongo:27017
       - RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+      - LIBGL_ALWAYS_SOFTWARE=0
+    ports:
+      - "9090:9090" # ROSBridge WebSocket
+      - "8080:8080" # Web Video Server
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
+      - /mnt/wslg:/mnt/wslg
+    devices:
+      - /dev/dri:/dev/dri
+      - /dev/dxg:/dev/dxg # Added for WSL2 DirectX acceleration
     depends_on:
       mongo:
         condition: service_healthy
@@ -32,7 +45,7 @@ services:
     image: mongo:7
     container_name: shopassist_mongo
     ports:
-      - "127.0.0.1:27017:27017"
+      - "27017:27017"
     volumes:
       - mongo_data:/data/db
       - ./mongo-seed:/mongo-seed

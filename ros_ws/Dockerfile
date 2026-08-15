@@ -2,7 +2,13 @@ FROM ros:humble-ros-base
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
+# Install uv from official binary image
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+# Use BuildKit cache mounts for apt archives and lists
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-rclpy \
     ros-humble-std-msgs \
     ros-humble-geometry-msgs \
@@ -21,18 +27,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-colcon-common-extensions \
     python3-pip \
     x11-utils \
-    && rm -rf /var/lib/apt/lists/*
-
-RUN pip3 install --no-cache-dir pymongo python-dotenv
+    libgl1-mesa-dri \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    mesa-utils
 
 COPY backend/requirements.txt /tmp/backend_requirements.txt
-RUN pip3 install --default-timeout=100 --no-cache-dir -r /tmp/backend_requirements.txt
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv pip install --system --no-cache-dir -r /tmp/backend_requirements.txt pymongo python-dotenv
 
 COPY backend/main.py backend/nav_bridge.py backend/search_chain.py /backend/
-
 COPY ros_ws/ /ros_ws/
+
 WORKDIR /ros_ws
-RUN /bin/bash -c "source /opt/ros/humble/setup.bash && colcon build --symlink-install"
+SHELL ["/bin/bash", "-c"]
+RUN source /opt/ros/humble/setup.bash && colcon build --symlink-install
 
 COPY ros_ws/start.sh /start.sh
 RUN chmod +x /start.sh
